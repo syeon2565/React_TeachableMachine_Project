@@ -12,14 +12,7 @@ class Login extends Component {
             provider: '',
         }
     }
-    // Google Login
-    responseGoogle = (res) => {
-        this.setState({
-            id: res.googleId,
-            name: res.profileObj.name,
-            provider: 'google'
-        });
-    }
+    
     // Kakao Login
     responseKakao = (res) => {
         this.setState({
