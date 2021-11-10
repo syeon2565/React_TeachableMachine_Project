@@ -60,6 +60,8 @@ const KakaoButton = styled(KakaoLogin)`
     font-size: 16px;
     font-weight: bold;
     text-align: center;
+    top:50px;
+    right:60px;
 `
 
 export default Login;
