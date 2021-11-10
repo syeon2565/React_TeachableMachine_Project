@@ -6,11 +6,9 @@ import ex2 from '../img/ex2.gif';
 const Logo = styled.div`
 width: 463px;
 height: 164px;
-
 font-family: Ramaraja;
 font-size: 72px;
 line-height: 123px;
-
 color: #000000;
 `;
 
@@ -26,12 +24,10 @@ background: #FFEB00;
 
 const SubMain = styled.div`
 width: 642px;
-
 font-style: normal;
 font-weight: normal;
 font-size: 50px;
 line-height: 62px;
-
 color: #000000;
 `;
 
