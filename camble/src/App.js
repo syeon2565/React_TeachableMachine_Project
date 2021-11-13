@@ -1,9 +1,10 @@
 import React from "react";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import { Route, Routes } from "react-router-dom";
 import Api from "./components/Api";
 import Main from "./components/Main";
 import styled from "styled-components";
+// import Routertest from "./components/Routertest";
 
 const Logo = styled.div`
 width: 463px;
@@ -21,9 +22,9 @@ const App = () => {
     <div>
       <Logo>Camble</Logo>
       <Routes>
-        <Route path="/" element={<Main/>} />
+        <Route path="/" element={<Main/>} /> exact={true}
         <Route path="/api" element={<Api/>}/>
-        <Route path="/login" element={<Login/>}/>
+        {/* <Route path="/login" element={<Login/>}/> */}
       </Routes>
     </div>
   );

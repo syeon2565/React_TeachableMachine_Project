@@ -1,7 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
 import ex2 from '../img/ex2.png';
-
+// import Api from "./Api";
+import { Link } from "react-router-dom";
 // const Logo = styled.div`
 // width: 463px;
 // height: 164px;
@@ -68,39 +69,42 @@ const TextBox = styled.div`
     mix-blend-mode: normal;
     position: absolute;
 `
+
+function ApiPage() {
+    return(
+        <Link to='/api'>
+            <button>
+                Home
+            </button>
+        </Link>
+    );
+}
+ 
 const Main = () => {
     return (
         <div>
-            {/* <div className="nav">
-                <div className="logo">camble</div>
-                <div className="login">카카오로 로그인하기</div>
-            </div> */}
-            {/* <Logo>Camble</Logo> */}
-            {/* <Login>카카오 로그인하기</Login> */}
             <div className="body">
                 <IMG><img src={ex2} alt="ex2" width="400" /></IMG>
 
                 <SubMain>
                     당신의 목은 안녕하신가요?
                 </SubMain>
+                <Button onClick={ApiPage}>
+                    거북목 측정하러 가기
+                </Button>
+            {/* <div className="mainComponentWrapper">
+                {viewCalendar ? <Api /> : <Main />}
+            </div> */}
 
-                {/* <Routes> */}
-
-                {/* <Link to="/api"></Link> */}
-                {/* <Route path="/api" element={<Api />}> */}
-
-                <Button onClick={onclick}>거북목 측정하러 가기</Button>
-                {/* </Link> */}
-                {/* </Route> */}
-                {/* </Routes> */}
-
-                <TextBox>
-                    camble은 cam + curble 의 합성어로, 웹캠을 이용하여 거북목을 측정해주는 서비스입니다.<br />
-                    camble은 인터넷을 사용하는 누구나 사용할 수 있으며, 거북목이 되었을 시 알림으로 경각심을 주어<br />
-                    사용자의 자세를 올바르게 교정하는데 도움을 줄 수 있는 서비스입니다.
-                </TextBox>
-            </div>
         </div>
+
+    <TextBox>
+        camble은 cam + curble 의 합성어로, 웹캠을 이용하여 거북목을 측정해주는 서비스입니다.<br />
+        camble은 인터넷을 사용하는 누구나 사용할 수 있으며, 거북목이 되었을 시 알림으로 경각심을 주어<br />
+        사용자의 자세를 올바르게 교정하는데 도움을 줄 수 있는 서비스입니다.
+    </TextBox>
+        </div >
     )
 }
 export default Main;
+// export default ApiPage; // 한개만 해줘야하는데/?
