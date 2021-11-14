@@ -24,25 +24,25 @@ const ModalContainer = styled.div`
     border-radius: 10px;
 `;
 
-// const Nav = styled.div`
-// height: 43px;
-// width: 136px;
-// padding-left:470px;
-// top: -157px;
-// border-radius: nullpx;
-// font-size: 25px;
-// `
+const Nav = styled.div`
+height: 43px;
+width: 136px;
+top: -157px;
+border-radius: nullpx;
+font-size: 25px;
+color: #ffffff;
+`
 
 const But = styled.div`
 height: 34px;
 width: 96px;
-left: 740px;
+left:450px;
 top: 500px;
 border-radius: 0px;
 text-align: center;
 position: absolute;
-
 background: #C4C4C4;
+
 `
 const Text = styled.div`
 height: 44px;
@@ -50,7 +50,9 @@ width: 200px;
 left: 66px;
 top: -78px;
 border-radius: nullpx;
-padding-left:700px;
+padding-left:400px;
+font-size: 20px;
+color: #ffffff;
 `
 
 const Tutorial1 = () => {
@@ -58,8 +60,7 @@ const Tutorial1 = () => {
         <div>
             <Background>
                 <ModalContainer>
-                    간단 사용법ㅂ
-                    {/* <Nav>간단 사용법</Nav> */}
+                    <Nav>간단 사용법</Nav>
                     <Link to="../api">
                         건너뛰기
                     </Link>
