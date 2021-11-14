@@ -1,8 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
 import ex2 from '../img/ex2.png';
-// import Api from "./Api";
 import { Link } from "react-router-dom";
+
 // const Logo = styled.div`
 // width: 463px;
 // height: 164px;
@@ -84,11 +84,6 @@ const Main = () => {
                     <Button> 거북목 측정하러 가기 </Button>
                 </Link>
 
-
-                {/* <div className="mainComponentWrapper">
-                {viewCalendar ? <Api /> : <Main />}
-            </div> */}
-
             </div>
 
             <TextBox>
@@ -100,4 +95,3 @@ const Main = () => {
     )
 }
 export default Main;
-// export default ApiPage; // 한개만 해줘야하는데/?
