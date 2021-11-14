@@ -70,16 +70,7 @@ const TextBox = styled.div`
     position: absolute;
 `
 
-function ApiPage() {
-    return(
-        <Link to='/api'>
-            <button>
-                Home
-            </button>
-        </Link>
-    );
-}
- 
+
 const Main = () => {
     return (
         <div>
@@ -89,20 +80,22 @@ const Main = () => {
                 <SubMain>
                     당신의 목은 안녕하신가요?
                 </SubMain>
-                <Button onClick={ApiPage}>
-                    거북목 측정하러 가기
-                </Button>
-            {/* <div className="mainComponentWrapper">
+                <Link to="./api">
+                    <Button> 거북목 측정하러 가기 </Button>
+                </Link>
+
+
+                {/* <div className="mainComponentWrapper">
                 {viewCalendar ? <Api /> : <Main />}
             </div> */}
 
-        </div>
+            </div>
 
-    <TextBox>
-        camble은 cam + curble 의 합성어로, 웹캠을 이용하여 거북목을 측정해주는 서비스입니다.<br />
-        camble은 인터넷을 사용하는 누구나 사용할 수 있으며, 거북목이 되었을 시 알림으로 경각심을 주어<br />
-        사용자의 자세를 올바르게 교정하는데 도움을 줄 수 있는 서비스입니다.
-    </TextBox>
+            <TextBox>
+                camble은 cam + curble 의 합성어로, 웹캠을 이용하여 거북목을 측정해주는 서비스입니다.<br />
+                camble은 인터넷을 사용하는 누구나 사용할 수 있으며, 거북목이 되었을 시 알림으로 경각심을 주어<br />
+                사용자의 자세를 올바르게 교정하는데 도움을 줄 수 있습니다.
+            </TextBox>
         </div >
     )
 }

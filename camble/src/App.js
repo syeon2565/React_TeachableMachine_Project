@@ -22,7 +22,7 @@ const App = () => {
     <div>
       <Logo>Camble</Logo>
       <Routes>
-        <Route path="/" element={<Main/>} /> exact={true}
+        <Route path="/" element={<Main/>} exact={true}/> 
         <Route path="/api" element={<Api/>}/>
         {/* <Route path="/login" element={<Login/>}/> */}
       </Routes>
