@@ -1,30 +1,27 @@
 import React from "react";
-// import Login from "./components/Login";
+import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Api from "./components/Api";
 import Main from "./components/Main";
-import styled from "styled-components";
-// import Routertest from "./components/Routertest";
+import Tutorial1 from "./components/Tutorial1";
+import Tutorial2 from "./components/Tutorial2";
+import Tutorial3 from "./components/Tutorial3";
+import Tutorial4 from "./components/Tutorial4";
+import Mypage from "./components/Mypage";
 
-const Logo = styled.div`
-width: 463px;
-height: 164px;
-font-family: Ramaraja;
-font-size: 72px;
-line-height: 123px;
-color: #000000;
-padding-left: 67px;
-padding-top: 15px;
-`;
 
 const App = () => {
   return (
     <div>
-      <Logo>Camble</Logo>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Main/>} exact={true}/> 
         <Route path="/api" element={<Api/>}/>
-        {/* <Route path="/login" element={<Login/>}/> */}
+        <Route path="/tutorial1" element={<Tutorial1/>}/>
+        <Route path="/tutorial2" element={<Tutorial2/>}/>
+        <Route path="/tutorial3" element={<Tutorial3/>}/>
+        <Route path="/tutorial4" element={<Tutorial4/>}/>
+        <Route path="/mypage" element={<Mypage/>}/>
       </Routes>
     </div>
   );
