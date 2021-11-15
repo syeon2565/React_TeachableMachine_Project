@@ -25,34 +25,34 @@ const ModalContainer = styled.div`
 `;
 
 const Nav = styled.div`
-height: 43px;
-width: 136px;
-top: -157px;
-border-radius: nullpx;
-font-size: 25px;
-color: #ffffff;
+    height: 43px;
+    width: 136px;
+    top: -157px;
+    border-radius: nullpx;
+    font-size: 25px;
+    color: #ffffff;
 `
 
 const But = styled.div`
-height: 34px;
-width: 96px;
-left:450px;
-top: 500px;
-border-radius: 0px;
-text-align: center;
-position: absolute;
-background: #C4C4C4;
+    height: 34px;
+    width: 96px;
+    left:450px;
+    top: 500px;
+    border-radius: 0px;
+    text-align: center;
+    position: absolute;
+    background: #C4C4C4;
 
 `
 const Text = styled.div`
-height: 44px;
-width: 200px;
-left: 66px;
-top: -78px;
-border-radius: nullpx;
-padding-left:400px;
-font-size: 20px;
-color: #ffffff;
+    height: 44px;
+    width: 200px;
+    left: 66px;
+    top: -78px;
+    border-radius: nullpx;
+    padding-left:400px;
+    font-size: 20px;
+    color: #ffffff;
 `
 
 const Tutorial1 = () => {
@@ -61,10 +61,10 @@ const Tutorial1 = () => {
             <Background>
                 <ModalContainer>
                     <Nav>간단 사용법</Nav>
-                    <Link to="../api">
+                    <Link to="../api" style={{ textDecoration: 'none' , color: 'blue' }}>
                         건너뛰기
                     </Link>
-                    <Link to="../tutorial2">
+                    <Link to="../tutorial2" style={{ textDecoration: 'none' ,  color: '#000' }}>
                         <But>Next</But>
                     </Link>
                     <Text>측정 버튼을 클릭하여<br />
