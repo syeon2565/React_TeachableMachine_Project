@@ -80,7 +80,7 @@ const Main = () => {
                 <SubMain>
                     당신의 목은 안녕하신가요?
                 </SubMain>
-                <Link to="./tutorial1" style={{ textDecoration: 'none' ,  color: '#000' }}>
+                <Link to="./api" style={{ textDecoration: 'none' ,  color: '#000' }}>
                     <Button> 거북목 측정하러 가기 </Button>
                 </Link>
 
