@@ -4,8 +4,10 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-display: flex;
-flex-flow: row;
+    padding-top :20px;
+    padding-left:50px;
+    display: flex;
+    flex-flow: row;
 `
 const Logo = styled.div`
   width: 463px;
@@ -14,26 +16,20 @@ const Logo = styled.div`
   font-size: 72px;
   line-height: 123px;
   color: #000000;
-  padding-left: 67px;
-  padding-top: 15px;
   
 `;
-const KakaoButton = styled(KakaoLogin)`
-    padding: 0px;
-    line-height: 44px;
-    color: #000000;
-    background-color: #FFEB00;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    height: 82px;
-    width: 291px;
-    left: 300px;
-    top: -307px;
-`
-class Login extends Component {
+// const KakaoButton = styled(KakaoLogin)`
+//     line-height: 44px;
+//     color: #000000;
+//     background-color: #FFEB00;
+//     border: 1px solid transparent;
+//     border-radius: 3px;
+//     font-weight: bold;
+//     text-align: center;
+// `
+
+
+class Navbar extends Component {
 
     constructor(props) {
         super(props);
@@ -76,6 +72,22 @@ class Login extends Component {
     }
 }
 
+const KakaoButton = styled(KakaoLogin)`
+  padding: 50rem;
+  width: 300px;
+  height: 45px;
+  line-height: 44px;
+  color: #783c00;
+  background-color: #ffeb00;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
+  }
+`;
 
-
-export default Login;
+export default Navbar;
