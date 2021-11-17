@@ -4,29 +4,38 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-    padding-top :20px;
+    padding :20px;
     padding-left:50px;
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
 `
 const Logo = styled.div`
-  width: 463px;
-  height: 164px;
   font-family: Ramaraja;
   font-size: 72px;
   line-height: 123px;
   color: #000000;
-  
+  padding:0px;
 `;
-// const KakaoButton = styled(KakaoLogin)`
-//     line-height: 44px;
-//     color: #000000;
-//     background-color: #FFEB00;
-//     border: 1px solid transparent;
-//     border-radius: 3px;
-//     font-weight: bold;
-//     text-align: center;
-// `
+
+const KakaoButton = styled(KakaoLogin)`
+  padding-top: 100rem;
+  width: 300px;
+  height: 45px;
+  line-height: 44px;
+  color: #783c00;
+  background-color: #ffeb00;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  display:flex;
+  justify-content:flex-end;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
+  }
+`;
 
 
 class Navbar extends Component {
@@ -39,7 +48,7 @@ class Navbar extends Component {
             provider: '',
         }
     }
-    
+
     // Kakao Login
     responseKakao = (res) => {
         this.setState({
@@ -57,37 +66,22 @@ class Navbar extends Component {
     render() {
         return (
             <div>
-             <Container>
-               <Logo>Camble</Logo>
-                <KakaoButton
-                    jsKey={process.env.REACT_APP_Kakao}
-                    buttonText="Kakao"
-                    onSuccess={this.responseKakao}
-                    onFailure={this.responseFail}
-                    getProfile="true"
-                />
-             </Container>
-                </div>
+                <Container>
+                    <Logo>Camble</Logo>
+                    <div></div>
+                    <KakaoButton
+                        jsKey={process.env.REACT_APP_Kakao}
+                        buttonText="Kakao"
+                        onSuccess={this.responseKakao}
+                        onFailure={this.responseFail}
+                        getProfile="true"
+                    />
+                </Container>
+            </div>
         );
     }
 }
 
-const KakaoButton = styled(KakaoLogin)`
-  padding: 50rem;
-  width: 300px;
-  height: 45px;
-  line-height: 44px;
-  color: #783c00;
-  background-color: #ffeb00;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
-  }
-`;
+
 
 export default Navbar;
