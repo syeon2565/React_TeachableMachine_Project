@@ -1,0 +1,15 @@
+/* .body {
+    display: flex;
+} */
+.TextBox{
+    text-align: center;
+    width: 100%; 
+}
+.bodyheader{
+    display: flex;
+}
+.bodyText{
+
+    flex-wrap: nowrap;
+    text-align: right;
+}
