@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 import React from 'react';
+import "./css/Api.css";
 
 const URL = "https://teachablemachine.withgoogle.com/models/Bx2-itLur/";
-let model, webcam, ctx, labelContainer, maxPredictions;
+let model, webcam, ctx, labelContainer, maxPredictions, labelContainer2;
 
 async function onclick() {
     const modelURL = URL + "model.json";
@@ -24,8 +25,10 @@ async function onclick() {
     canvas.width = size; canvas.height = size;
     ctx = canvas.getContext("2d");
     labelContainer = document.getElementById("label-container");
+    labelContainer2 = document.getElementById("label-container2");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
+        labelContainer2.appendChild(document.createElement("div"));
     }
 }
 
@@ -41,11 +44,21 @@ async function predict() {
     const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
     // Prediction 2: run input through teachable machine classification model
     const prediction = await model.predict(posenetOutput);
-
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
             prediction[i].className + ": " + prediction[i].probability.toFixed(2);
         labelContainer.childNodes[i].innerHTML = classPrediction;
+
+
+
+    }
+    if (prediction[1].probability.toFixed(2) >= 0.50) {
+        labelContainer2.childNodes[1].innerHTML = "거북목 위험하므로 주의해주세요";
+        // var audio = document.getElementById("myAudio");
+        // var audio = new Audio('alarm.mp3');
+        // audio.play();
+    } else {
+        labelContainer2.childNodes[1].innerHTML = "올바른 자세를 유지하고 계시네요.<br/> 지금 자세유지에 노력하세요!";
     }
 
     // finally draw the poses
@@ -66,10 +79,13 @@ function drawPose(pose) {
 
 const Api = () => {
     return (
-        <div>
+        <div className="body">
             <button type="button" onClick={onclick}>측정</button>
-            <div><canvas id="canvas"></canvas></div>
-            <div id="label-container"></div>
+            
+                <div><canvas id="canvas"className="test" ></canvas></div>
+                {/* <div><audio id="myAudio"></audio></div> */}
+                <div id="label-container" className="test text"></div>
+                <div id="label-container2" className="test text"></div>
         </div>
     )
 };

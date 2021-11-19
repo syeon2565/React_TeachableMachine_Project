@@ -1,0 +1,14 @@
+#canvas{
+    display: flex;
+    justify-content: center;
+    padding-left: 470px;
+}
+.test{
+    display: flex;
+    justify-content: center;
+    /* padding-left: 300px; */
+}
+/* .body{
+    display: flex;
+    justify-content: center;
+} */
