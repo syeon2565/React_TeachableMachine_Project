@@ -79,7 +79,7 @@ const Api = () => {
             }
         }
         onClick();
-    },[])
+    },[audio])
     
     
     return (

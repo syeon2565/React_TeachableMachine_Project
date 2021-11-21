@@ -4,6 +4,9 @@ import ex2 from '../img/ex2.png';
 import { Link } from "react-router-dom";
 import "./css/Main.css";
 
+const Container = styled.div`
+    display: grid;
+`
 const SubMain = styled.div`
     top:300px;
     left: 760px;
@@ -33,7 +36,6 @@ const Button = styled.div`
     position: absolute;
  `;
 const TextBox = styled.div`
-
     font-size: 20px;
     line-height: 30px;
     mix-blend-mode: normal;
@@ -45,15 +47,17 @@ const Main = () => {
     return (
         <div>
             <div className="body">
+                <Container>
                 <IMG><img src={ex2} alt="ex2" width="400" /></IMG>
-                
+                <div>
                 <SubMain>
                     당신의 목은 안녕하신가요?
                 </SubMain>
                 <Link to="./api" style={{ textDecoration: 'none' ,  color: '#000' }}>
-                    <Button> 거북목 측정하러 가기 </Button>
+                    <Button onClick={onclick}> 거북목 측정하러 가기 </Button>
                 </Link>
-
+                </div>
+                </Container>
                 </div>
             
 
