@@ -1,14 +1,12 @@
 #canvas{
     display: flex;
-    justify-content: center;
-    padding-left: 470px;
+    margin: auto;
 }
 .test{
     display: flex;
     justify-content: center;
-    /* padding-left: 300px; */
 }
-/* .body{
+.body{
     display: flex;
     justify-content: center;
-} */
+}
