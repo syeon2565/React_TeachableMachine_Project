@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState} from 'react';
-import "./css/Api.css";
 
 const URL = "https://teachablemachine.withgoogle.com/models/Bx2-itLur/";
 let model, webcam, ctx, labelContainer, maxPredictions, labelContainer2;
@@ -8,9 +7,8 @@ let model, webcam, ctx, labelContainer, maxPredictions, labelContainer2;
 
 const Api = () => {
     const [audio] = useState(new Audio('audio.mp3'));
-
     useEffect(()=>{
-        async function onClick() {
+        async function turtle() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
         
@@ -78,17 +76,14 @@ const Api = () => {
                 }
             }
         }
-        onClick();
+        turtle();
     },[audio])
     
     
     return (
         <div className="body">
-            {/* <button type="button" onClick={onClick}>측정</button> */}
-            
-                <div><canvas id="canvas"className="test"></canvas></div>
-                {/* <div><audio id="myAudio"></audio></div> */}
-                <div id="label-container" className="test text"></div>
+                <div><canvas id="canvas"></canvas></div>
+                <div id="label-container" className="test"></div>
                 <div id="label-container2" className="test text"></div>
         </div>
     )

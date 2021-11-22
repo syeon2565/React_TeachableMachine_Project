@@ -3,12 +3,38 @@ import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Api from "./components/Api";
 import Main from "./components/Main";
-import Tutorial1 from "./components/Tutorial1";
-import Tutorial2 from "./components/Tutorial2";
-import Tutorial3 from "./components/Tutorial3";
-import Tutorial4 from "./components/Tutorial4";
-import Mypage from "./components/Mypage";
+import Tutorial from "./components/Tutorial";
+// import Mypage from "./components/Mypage";
+import "./components/css/Api.css"
+import "./components/css/Main.css"
+import styled from "styled-components";
 
+const Container = styled.div`
+    display: flex;
+    justify-content:center;
+`
+const SubMain = styled.div`
+    font-size: 50px;
+    line-height: 62px;
+    color: #000000;
+    text-align:center;
+`;
+
+const Button = styled.div`
+    width: 400px;
+    height: 134px;
+    background: #1967D2;
+    font-size: 40px;
+    line-height: 130px;
+    mix-blend-mode: normal;
+    text-align:center;
+ `;
+const TextBox = styled.div`
+    font-size: 20px;
+    line-height: 30px;
+    mix-blend-mode: normal;
+    position: absolute;
+`
 
 const App = () => {
   return (
@@ -17,11 +43,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main/>} exact={true}/> 
         <Route path="/api" element={<Api/>}/>
-        <Route path="/tutorial1" element={<Tutorial1/>}/>
-        <Route path="/tutorial2" element={<Tutorial2/>}/>
-        <Route path="/tutorial3" element={<Tutorial3/>}/>
-        <Route path="/tutorial4" element={<Tutorial4/>}/>
-        <Route path="/mypage" element={<Mypage/>}/>
+        <Route path="/tutorial" element={<Tutorial/>}/>
       </Routes>
     </div>
   );

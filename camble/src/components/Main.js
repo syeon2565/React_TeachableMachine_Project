@@ -2,25 +2,19 @@ import React from "react";
 import styled from 'styled-components';
 import ex2 from '../img/ex2.png';
 import { Link } from "react-router-dom";
-import "./css/Main.css";
+
 
 const Container = styled.div`
     display: flex;
     justify-content:center;
 `
 const SubMain = styled.div`
-    font-style: normal;
-    font-weight: normal;
     font-size: 50px;
     line-height: 62px;
     color: #000000;
     text-align:center;
 `;
-const IMG = styled.div`
-    // width:50%;
-    // top:300px;
-    // padding-left:250px;
-`
+
 const Button = styled.div`
     width: 400px;
     height: 134px;
@@ -43,8 +37,8 @@ const Main = () => {
         <div>
             <div className="body">
                 <Container>
-                    <IMG><img src={ex2} alt="image" width="400" /></IMG>
-                    <div className="body-center-text">
+                    <img src={ex2} alt="image" width="400" />
+                    <div className="body-center-text" >
                         <div className="body-center-text1">
                             <SubMain>
                                 당신의 목은 안녕하신가요?
