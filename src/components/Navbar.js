@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import KakaoLogin from 'react-kakao-login';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -67,7 +68,9 @@ class Navbar extends Component {
         return (
             <div>
                 <Container>
+                <Link to="./" style={{ textDecoration: 'none', color: '#000' }}>
                     <Logo>Camble</Logo>
+                    </Link>
                     <div></div>
                     <KakaoButton
                         jsKey={process.env.REACT_APP_Kakao}

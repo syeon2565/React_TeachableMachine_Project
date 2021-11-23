@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 const URL = "https://teachablemachine.withgoogle.com/models/Bx2-itLur/";
 let model, webcam, ctx, labelContainer, maxPredictions, labelContainer2;
@@ -7,14 +7,15 @@ let model, webcam, ctx, labelContainer, maxPredictions, labelContainer2;
 
 const Api = () => {
     const [audio] = useState(new Audio('audio.mp3'));
-    useEffect(()=>{
+
+    useEffect(() => {
         async function turtle() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
-        
+
             model = await tmPose.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
-        
+
             // Convenience function to setup a webcam
             const size = 500;
             const flip = true; // whether to flip the webcam
@@ -22,7 +23,7 @@ const Api = () => {
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
-        
+
             // append/get elements to the DOM
             const canvas = document.getElementById("canvas");
             canvas.width = size; canvas.height = size;
@@ -39,7 +40,7 @@ const Api = () => {
             await predict();
             window.requestAnimationFrame(loop);
         }
-        
+
         async function predict() {
             // Prediction #1: run input through posenet
             // estimatePose can take in an image, video or canvas html element
@@ -60,11 +61,11 @@ const Api = () => {
                 labelContainer2.childNodes[1].innerHTML = "올바른 자세를 유지하고 계시네요.<br/> 지금 자세유지에 노력하세요!";
                 audio.pause();
             }
-        
+
             // finally draw the poses
             drawPose(pose);
         }
-        
+
         function drawPose(pose) {
             if (webcam.canvas) {
                 ctx.drawImage(webcam.canvas, 0, 0);
@@ -77,14 +78,14 @@ const Api = () => {
             }
         }
         turtle();
-    },[audio])
-    
-    
+    }, [audio])
+
+
     return (
         <div className="body">
-                <div><canvas id="canvas"></canvas></div>
-                <div id="label-container" className="test"></div>
-                <div id="label-container2" className="test text"></div>
+            <div><canvas id="canvas"></canvas></div>
+            <div id="label-container" className="test"></div>
+            <div id="label-container2" className="test text"></div>
         </div>
     )
 };

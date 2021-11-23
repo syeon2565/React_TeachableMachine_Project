@@ -1,8 +1,5 @@
 # Teachable Machine을 이용하여 거북목 측정하기
 
-## 디렉토리 이동
-`cd camble` 
-
 ## 실행
 `yarn start`   또는
 
