@@ -45,7 +45,7 @@ const Main = () => {
                             </SubMain>
                         </div>
                         <div className="body-center-text2">
-                            <Link to="./api" style={{ textDecoration: 'none', color: '#000' }}>
+                            <Link to="./tutorial" style={{ textDecoration: 'none', color: '#000' }}>
                                 <Button onClick={onclick}> 거북목 측정하러 가기 </Button>
                             </Link>
                         </div>
