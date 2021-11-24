@@ -3,7 +3,6 @@ import KakaoLogin from 'react-kakao-login';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 const Container = styled.div`
     padding :20px;
     padding-left:50px;
@@ -68,8 +67,8 @@ class Navbar extends Component {
         return (
             <div>
                 <Container>
-                <Link to="./" style={{ textDecoration: 'none', color: '#000' }}>
-                    <Logo>Camble</Logo>
+                    <Link to="./" style={{ textDecoration: 'none', color: '#000' }}>
+                        <Logo>Camble</Logo>
                     </Link>
                     <div></div>
                     <KakaoButton
