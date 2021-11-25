@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import KakaoLogin from 'react-kakao-login';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import KakaoLogin from "react-kakao-login";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
-    padding :20px;
-    padding-left:50px;
-    display: grid;
-    grid-template-columns: 300px 1fr 300px;
-`
+  padding: 20px;
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+`;
 const Logo = styled.div`
   font-family: Ramaraja;
   font-size: 72px;
   line-height: 123px;
   color: #000000;
-  padding:0px;
+  padding: 0px;
 `;
 
 const KakaoButton = styled(KakaoLogin)`
@@ -29,61 +29,57 @@ const KakaoButton = styled(KakaoLogin)`
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  display:flex;
-  justify-content:flex-end;
+  display: flex;
+  justify-content: flex-end;
   cursor: pointer;
   &:hover {
     box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
   }
 `;
 
-
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      name: "",
+      provider: "",
+    };
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: '',
-            name: '',
-            provider: '',
-        }
-    }
+  // Kakao Login
+  responseKakao = (res) => {
+    this.setState({
+      id: res.profile.id,
+      name: res.profile.properties.nickname,
+      provider: "kakao",
+    });
+  };
 
-    // Kakao Login
-    responseKakao = (res) => {
-        this.setState({
-            id: res.profile.id,
-            name: res.profile.properties.nickname,
-            provider: 'kakao'
-        })
-    }
+  // Login Fail
+  responseFail = (err) => {
+    console.error(err);
+  };
 
-    // Login Fail
-    responseFail = (err) => {
-        console.error(err);
-    }
-
-    render() {
-        return (
-            <div>
-                <Container>
-                    <Link to="./" style={{ textDecoration: 'none', color: '#000' }}>
-                        <Logo>Camble</Logo>
-                    </Link>
-                    <div></div>
-                    <KakaoButton
-                        jsKey={process.env.REACT_APP_Kakao}
-                        buttonText="Kakao"
-                        onSuccess={this.responseKakao}
-                        onFailure={this.responseFail}
-                        getProfile="true"
-                    />
-                </Container>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Container>
+          <Link to="./" style={{ textDecoration: "none", color: "#000" }}>
+            <Logo>Camble</Logo>
+          </Link>
+          <div></div>
+          <KakaoButton
+            jsKey={process.env.REACT_APP_Kakao}
+            buttonText="Kakao"
+            onSuccess={this.responseKakao}
+            onFailure={this.responseFail}
+            getProfile="true"
+          />
+        </Container>
+      </div>
+    );
+  }
 }
-
-
 
 export default Navbar;
