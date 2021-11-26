@@ -54,18 +54,25 @@ const Nav = styled.div`
 //   color: #ffffff;
 // `;
 
+var i=0;
 const Tutorial = () => {
-  const [text, setText] = useState([
-    "웹 캠 사용을 허락한 후, 잠시 기다려주세요!",
-  ]);
-  const onClickNext = () =>
-    setText(
-      "자신의 얼굴과 어깨선을 기준으로, 움직이는 자세에 따라 거북목인지 정상인지 나타납니다.",
-      "범위에 따라 거북목일 때의 비율이 높을 시 알림으로 경각심을 줄 수 있습니다.",
-      "자신의 거북목 측정값을 마이페이지에 기록하세요!"
+    const [text, setText] = useState(
+        "웹 캠 사용을 허락한 후, 잠시 기다려주세요!"
     );
-  // const onClickNext2 = () => setText("범위에 따라 거북목일 때의 비율이 높을 시 알림으로 경각심을 줄 수 있습니다.")
-  // const onClickNext3 = () => setText("자신의 거북목 측정값을 마이페이지에 기록하세요!")
+    const array =  ["자신의 얼굴과 어깨선을 기준으로, 움직이는 자세에 따라 거북목인지 정상인지 나타납니다.",
+    "범위에 따라 거북목일 때의 비율이 높을 시 알림으로 경각심을 줄 수 있습니다.",
+    "자신의 거북목 측정값을 마이페이지에 기록하세요!"]
+    const onClickNext = () =>{
+    if(i!==3){
+        setText(array[i++]);
+    }
+    // else {
+    //     <Link to="../api">
+    //       </Link>
+    // }
+    console.log(i);
+}
+
   return (
     <div>
       <Background>
@@ -74,10 +81,7 @@ const Tutorial = () => {
           <Link to="../api" style={{ textDecoration: "none", color: "blue" }}>
             건너뛰기
           </Link>
-          <button onClick={onClickNext}>2</button>
-          {/* <button onClick={onClickNext2}>3</button> */}
-          {/* <button onClick={onClickNext3}>4</button> */}
-
+          <button onClick={onClickNext}>Next</button>
           <h1>{text}</h1>
         </ModalContainer>
       </Background>
