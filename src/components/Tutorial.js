@@ -56,6 +56,7 @@ const Nav = styled.div`
 
 var i=0;
 const Tutorial = () => {
+    
     const [text, setText] = useState(
         "웹 캠 사용을 허락한 후, 잠시 기다려주세요!"
     );
@@ -70,7 +71,6 @@ const Tutorial = () => {
     //     <Link to="../api">
     //       </Link>
     // }
-    console.log(i);
 }
 
   return (
