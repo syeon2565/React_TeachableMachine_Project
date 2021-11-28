@@ -58,7 +58,7 @@ const Text = styled.div`
 var i = 0;
 
 const Tutorial = () => {
-    const [tuto, setTuto] = useState(true);
+  const [tuto, setTuto] = useState(true);
   const [text, setText] = useState(
     "웹 캠 사용을 허락한 후, 잠시 기다려주세요!"
   );
@@ -67,17 +67,17 @@ const Tutorial = () => {
     "범위에 따라 거북목일 때의 비율이 높을 시 알림으로 경각심을 줄 수 있습니다.",
     "자신의 거북목 측정값을 마이페이지에 기록하세요!",
   ];
-  
+
   const onClickNext = () => {
     if (i !== array.length) {
       setText(array[i++]);
       console.log(tuto);
       console.log(i);
-      document.getElementById("two_button").style.display="none"
+      document.getElementById("two_button").style.display = "none";
       if (i === 3) {
         setTuto(false); //else로 가지고왔더니.. false값이 처음에 바뀌지 않아 우선 이렇게 해결...
-        document.getElementById("one_button").style.display="none";
-        document.getElementById("two_button").style.display="block";
+        document.getElementById("one_button").style.display = "none";
+        document.getElementById("two_button").style.display = "block";
       }
     }
     console.log(tuto);
@@ -91,8 +91,14 @@ const Tutorial = () => {
           <Link to="../api" style={{ textDecoration: "none", color: "blue" }}>
             건너뛰기
           </Link>
-          <Button id="one_button" onClick={onClickNext}>Next</Button>
-          <Link id="two_button" to="../api" style={{ textDecoration: "none", color: "blue", display: "none"}}>
+          <Button id="one_button" onClick={onClickNext}>
+            Next
+          </Button>
+          <Link
+            id="two_button"
+            to="../api"
+            style={{ textDecoration: "none", color: "blue", display: "none" }}
+          >
             <Button>Next</Button>
           </Link>
           <Text>{text}</Text>
