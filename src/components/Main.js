@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ex2 from "../img/ex2.png";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -35,7 +34,7 @@ const Main = () => {
     <div>
       <div className="body">
         <Container>
-          <img src={ex2} alt="predict" width="400" />
+          <img src="img/ex2.png" alt="predict" width="400" />
           <div className="body-center-text">
             <div className="body-center-text1">
               <SubMain>당신의 목은 안녕하신가요?</SubMain>
