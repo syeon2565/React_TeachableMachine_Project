@@ -1,26 +1,24 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import { Line } from 'react-chartjs-2'
+import {Chart, registerables} from 'chart.js';
+Chart.register(...registerables);
 
-const Chart = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 261px;
-  width: 100%;
-  border-radius: 0px;
-`;
-const Text = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 24px;
-  width: 100%;
-  font-size: 20px;
-`;
 const Mypage = () => {
   return (
-    <div>
-      <Chart>그래프 그릴거고..</Chart>
-      <Text>'사용자'님의 거북목 평균 횟수는 6.7회입니다.</Text>
-    </div>
-  );
-};
+<Line
+  data={{
+    labels: ['sun', 'mon', 'tue', 'wed', 'thur', 'fri', 'sat'],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [65, 59, 80, 81, 56, 55, 40],
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1
+    }]
+  }}
+  options={{ maintainAspectRatio: false }}
+/>
+  )
+}
+
 export default Mypage;
