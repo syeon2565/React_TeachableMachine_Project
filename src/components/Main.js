@@ -44,7 +44,7 @@ const Main = () => {
                 to="./tutorial"
                 style={{ textDecoration: "none", color: "#000" }}
               >
-                <Button onClick={onclick}> 거북목 측정하러 가기 </Button>
+                <Button> 거북목 측정하러 가기 </Button>
               </Link>
             </div>
           </div>
