@@ -51,7 +51,6 @@ class Navbar extends Component {
   responseKakao = (res) => {
     this.setState({
       id: res.profile.id,
-      name: res.profile.properties.nickname,
       provider: "kakao",
     });
   };
