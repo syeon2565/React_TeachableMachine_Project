@@ -5,7 +5,7 @@ Chart.register(...registerables);
 
 const Mypage = () => {
   return (
-<Line
+<Line id="chart" width="1000px" height="500px"
   data={{
     labels: ['sun', 'mon', 'tue', 'wed', 'thur', 'fri', 'sat'],
     datasets: [{
@@ -16,7 +16,7 @@ const Mypage = () => {
       tension: 0.1
     }]
   }}
-  options={{ maintainAspectRatio: false }}
+  options={{ responsive: false}}
 />
   )
 }
