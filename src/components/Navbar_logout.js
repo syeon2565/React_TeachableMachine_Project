@@ -37,7 +37,7 @@ const KakaoButton = styled(KakaoLogin)`
   }
 `;
 
-class Navbar extends Component {
+class NavbarLogout extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,12 +46,15 @@ class Navbar extends Component {
       provider: "",
     };
   }
+  state = {
+    loginResult: false, // 로그인 여부에 따라 페이지를 편집하기 위해 추가
+  };
 
   // Kakao Login
   responseKakao = (res) => {
     this.setState({
       id: res.profile.id,
-      provider: "kakao",
+      name:res.profile.name,
     });
   };
 
@@ -59,6 +62,15 @@ class Navbar extends Component {
   responseFail = (err) => {
     console.error(err);
   };
+  doSignUp = () => {
+    const { id, name } = this.state;
+
+    window.sessionStorage.setItem('id', id);
+    window.sessionStorage.setItem('name', name);
+    this.props.onLogin();
+    this.props.history.push('/');
+}
+
 
   render() {
     return (
@@ -81,4 +93,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default NavbarLogout;
