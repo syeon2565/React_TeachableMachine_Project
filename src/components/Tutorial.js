@@ -34,7 +34,7 @@ const Nav = styled.div`
 `;
 
 const Button = styled.div`
-  height: 34px;
+
   width: 96px;
   left: 450px;
   top: 500px;
@@ -97,7 +97,7 @@ const Tutorial = () => {
           <Link
             id="two_button"
             to="../api"
-            style={{ textDecoration: "none", color: "blue", display: "none" }}
+            style={{ textDecoration: "none", color: "black", display: "none" }}
           >
             <Button>Next</Button>
           </Link>
