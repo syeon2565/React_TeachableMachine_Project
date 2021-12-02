@@ -37,8 +37,7 @@ class NavbarLogin extends Component {
     super(props);
     this.state = {
       id: "",
-      name: "",
-      provider: "",
+      name: ""
     };
   }
   state = {

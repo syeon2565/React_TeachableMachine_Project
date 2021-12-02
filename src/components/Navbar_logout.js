@@ -53,10 +53,11 @@ class NavbarLogout extends Component {
   // Kakao Login
   responseKakao = (res) => {
     this.setState({
-      id: res.profile.id,
-      name:res.profile.name,
+        id: res.profile.id,
+        name: res.profile.properties.nickname
     });
-  };
+    this.doSignUp();
+}
 
   // Login Fail
   responseFail = (err) => {

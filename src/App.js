@@ -31,23 +31,27 @@ class App extends Component {
     this.setState({
         logged: false
     });
-
-    const provider = window.sessionStorage.getItem('provider');    
-    //Google AccessToken Remove
-    if(provider === 'google') {
-      const auth2 = window.gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function() {
-        console.log('Goolge Logout.');
-      });
-    }
-    // Kakao AccessToken Remove
-    else if(provider === 'kakao'){
-      window.Kakao.Auth.logout(function() {
-        console.log("Kakao logout");
-      });
-    }
-    //SessionStorage Clear
+    window.Kakao.Auth.logout(function() {
+      console.log("Kakao logout");
+    });
     window.sessionStorage.clear();
+
+    // const provider = window.sessionStorage.getItem('provider');    
+    // //Google AccessToken Remove
+    // if(provider === 'google') {
+    //   const auth2 = window.gapi.auth2.getAuthInstance();
+    //   auth2.signOut().then(function() {
+    //     console.log('Goolge Logout.');
+    //   });
+    // }
+    // // Kakao AccessToken Remove
+    // else if(provider === 'kakao'){
+    //   window.Kakao.Auth.logout(function() {
+    //     console.log("Kakao logout");
+    //   });
+    // }
+    // //SessionStorage Clear
+    // window.sessionStorage.clear();
   }
 
   componentDidMount() {
