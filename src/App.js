@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import NavbarLogout from "./components/Navbar_logout";
-// import NavbarLogin from "./components/Navbar_login";
+import NavbarLogin from "./components/Navbar_login";
 import { Route, Routes } from "react-router-dom";
 import Api from "./components/Api";
 import Main from "./components/Main";
@@ -52,9 +52,15 @@ class App extends Component {
     const { logged, onLogout } = this.state;
     return (
       <div>
-        <NavbarLogout logged={logged} onLogout={onLogout}/>
+        if (logged==={logged}) {
+          <NavbarLogout/>
+        }
+        else if(logged==={onLogout}) {
+          <NavbarLogin/>
+        }
+        {/* <NavbarLogout logged={logged} onLogout={onLogout}/> */}
         <Routes>
-          <Route path="/" element={<Main />} exact={true} />
+          <Route path="/" element={<Main />}/>
           <Route path="/api" element={<Api />} />
           <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/mypage" element={<Mypage />} />
