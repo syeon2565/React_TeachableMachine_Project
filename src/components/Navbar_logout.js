@@ -43,35 +43,35 @@ class NavbarLogout extends Component {
     this.state = {
       id: "",
       name: "",
-      provider: "",
     };
   }
   state = {
-    loginResult: false, // 로그인 여부에 따라 페이지를 편집하기 위해 추가
+    loginResult: false // 로그인 여부에 따라 페이지를 편집하기 위해 추가
   };
 
   // Kakao Login
   responseKakao = (res) => {
     this.setState({
-        id: res.profile.id,
-        name: res.profile.properties.nickname
+      id: res.profile.id,
+      name: res.profile.properties.nickname
     });
     this.doSignUp();
-}
+  };
 
   // Login Fail
   responseFail = (err) => {
     console.error(err);
   };
+
   doSignUp = () => {
     const { id, name } = this.state;
 
-    window.sessionStorage.setItem('id', id);
-    window.sessionStorage.setItem('name', name);
-    this.props.onLogin();
-    this.props.history.push('/');
-}
-
+    window.sessionStorage.setItem("id", id);
+    window.sessionStorage.setItem("name", name);
+    // this.props.onLogin();
+    // this.props.history.push("/");
+    // <Link to="./mypage"></Link>
+  };
 
   render() {
     return (

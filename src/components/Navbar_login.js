@@ -16,22 +16,6 @@ const Logo = styled.div`
   padding: 0px;
 `;
 
-const Button = styled`
-  padding-top: 100rem;
-  background-color: #ffeb00;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
-  }
-`;
-
 class NavbarLogin extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +27,16 @@ class NavbarLogin extends Component {
   state = {
     loginResult: true, // 로그인 여부에 따라 페이지를 편집하기 위해 추가
   };
+  onLogout = () => {
+    this.setState({
+        logged: false
+    });
+    window.Kakao.Auth.logout(function() {
+      console.log("Kakao logout");
+    });
+    window.sessionStorage.clear();
 
+  }
   render() {
     return (
       <div>
@@ -52,7 +45,7 @@ class NavbarLogin extends Component {
             <Logo>Camble</Logo>
           </Link>
           <div></div>
-          <Button>로그아웃</Button>
+          <button onClick="onLogout">로그아웃</button>
         </Container>
       </div>
     );

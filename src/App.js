@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import NavbarLogout from "./components/Navbar_logout";
-import NavbarLogin from "./components/Navbar_login";
+// import NavbarLogin from "./components/Navbar_login";
 import { Route, Routes } from "react-router-dom";
 import Api from "./components/Api";
 import Main from "./components/Main";
@@ -9,6 +9,8 @@ import Mypage from "./components/Mypage";
 import "./components/css/Api.css";
 import "./components/css/Main.css";
 import "./components/css/Chart.css";
+// import KaKaoLogin from "./components/KaKaoLogin";
+// import KaKaoLogout from "./components/KaKaoLogout";
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +25,9 @@ class App extends Component {
    onLogin = () => {
     this.setState({
         logged: true
-    });
+
+      });
+      console.log("Kakao 로그인");
   }
 
   // Logout Func
@@ -52,13 +56,9 @@ class App extends Component {
     const { logged, onLogout } = this.state;
     return (
       <div>
-        if (logged==={logged}) {
-          <NavbarLogout/>
-        }
-        else if(logged==={onLogout}) {
-          <NavbarLogin/>
-        }
-        {/* <NavbarLogout logged={logged} onLogout={onLogout}/> */}
+        <NavbarLogout logged={logged} onLogout={onLogout}/>
+        {/* <NavbarLogin logged={logged} onLogout={onLogout}/> */}
+        {/* <KaKaoLogout/> */}
         <Routes>
           <Route path="/" element={<Main />}/>
           <Route path="/api" element={<Api />} />
